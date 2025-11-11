@@ -1,4 +1,3 @@
-# slowercrazyMainiro.github.io
 # 🌿 ECOAhorro – Simulador de Consumo Energético
 
 **ECOAhorro** es una aplicación web desarrollada como proyecto escolar.  
