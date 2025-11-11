@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoAhorro - Simulador de Consumo Energético</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <div class="container fade-in">
+    <h1>ECOAhorro 🌿</h1>
+    <h3>Simulador de Consumo Energético Doméstico</h3>
+
+    <div class="input-section fade-in">
+      <input type="text" id="userName" placeholder="Ingresa tu nombre">
+      
+      <label for="appliance">Selecciona un aparato:</label>
+      <select id="appliance">
+        <option value="">-- Selecciona --</option>
+        <option value="refrigerador">Refrigerador</option>
+        <option value="tv">Televisor</option>
+        <option value="computadora">Computadora</option>
+        <option value="foco">Foco</option>
+        <option value="lavadora">Lavadora</option>
+        <option value="microondas">Microondas</option>
+        <option value="licuadora">Licuadora</option>
+        <option value="ventilador">Ventilador</option>
+        <option value="aire">Aire Acondicionado</option>
+        <option value="plancha">Plancha</option>
+        <option value="consola">Consola</option>
+        <option value="router">Router</option>
+      </select>
+
+      <input type="number" id="quantity" placeholder="Cantidad de aparatos" min="1">
+      <input type="number" id="hours" placeholder="Horas de uso al día" min="1" max="24">
+
+      <button id="addBtn">Agregar aparato</button>
+    </div>
+
+    <h3>📊 Aparatos agregados</h3>
+    <table id="deviceTable">
+      <thead>
+        <tr>
+          <th>Aparato</th>
+          <th>Cantidad</th>
+          <th>Horas/Día</th>
+          <th>Consumo (kWh)</th>
+          <th>Costo (MXN)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="totals fade-in">
+      <h3>Total mensual:</h3>
+      <p><strong>Consumo:</strong> <span id="totalKwh">0.00</span> kWh</p>
+      <p><strong>Costo estimado:</strong> $<span id="totalCost">0.00</span> MXN</p>
+    </div>
+
+    <canvas id="usageChart" class="fade-in"></canvas>
+
+    <button id="generatePdf">📄 Generar Reporte PDF</button>
+
+    <footer class="fade-in">
+      <p>Desarrollado por <strong>Equipo ECOAhorro</strong> © 2025</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
